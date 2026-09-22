@@ -32,3 +32,7 @@ Página web que calcula el promedio de tres notas e indica si el estudiante apru
 12. `console.log("promedio calculado")` — log de depuración que no debería estar en producción
 13. `console.log("pagina cargada")` — log de depuración que no debería estar en producción
 14. Función comentada `// function calcularAntiguo(...)` — código muerto comentado, lo mejor sería eliminarlo
+
+### Indentación y formato
+15. El bloque `<script>` no tiene indentación consistente con el resto del HTML
+16. Líneas en blanco sobrantes dentro de la función `calc()` y al inicio del `<script>`
