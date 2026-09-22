@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>pagina</title>
-    <link rel="stylesheet" href="Estilos Del Sitio.CSS">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="cont1">
         <h1>Calculadora de Promedio</h1>
         <p>Ingrese las tres notas del corte para calcular el promedio.</p>
@@ -27,42 +26,39 @@
     </div>
 
 <script>
+    const cantidadNotas = 3;
 
-const cantidadNotas = 3;
+    function calcularPromedio() {
+        let nota1 = parseFloat(document.getElementById("n1").value);
+        let nota2 = parseFloat(document.getElementById("n2").value);
+        let nota3 = parseFloat(document.getElementById("n3").value);
 
-function calcularPromedio() {
+        console.log("valores capturados:", nota1, nota2, nota3);
 
-    let nota1 = parseFloat(document.getElementById("n1").value);
-    let nota2 = parseFloat(document.getElementById("n2").value);
-    let nota3 = parseFloat(document.getElementById("n3").value);
+        if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+            document.getElementById("r").innerHTML = "Debe ingresar las tres notas.";
+            return;
+        }
 
-    console.log("valores capturados:", nota1, nota2, nota3);
+        let promedio = (nota1 + nota2 + nota3) / cantidadNotas;
 
-    if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
-        document.getElementById("r").innerHTML = "Debe ingresar las tres notas.";
-        return;
+        document.getElementById("r").innerHTML = "Promedio: " + promedio.toFixed(2);
+
+        if (promedio >= 3.0) {
+            document.getElementById("r2").innerHTML = "Resultado: aprobado";
+        } else {
+            document.getElementById("r2").innerHTML = "Resultado: reprobado";
+        }
+
+        console.log("promedio calculado");
     }
 
-    let promedio = (nota1 + nota2 + nota3) / cantidadNotas;
+    // function calcularAntiguo(nota1, nota2) {
+    //     let suma = nota1 + nota2;
+    //     return suma / 2;
+    // }
 
-    document.getElementById("r").innerHTML = "Promedio: " + promedio.toFixed(2);
-
-    if (promedio >= 3.0) {
-        document.getElementById("r2").innerHTML = "Resultado: aprobado";
-    } else {
-        document.getElementById("r2").innerHTML = "Resultado: reprobado";
-    }
-
-    console.log("promedio calculado");
-}
-
-// function calcularAntiguo(nota1, nota2) {
-//     let suma = nota1 + nota2;
-//     return suma / 2;
-// }
-
-console.log("pagina cargada");
-
+    console.log("pagina cargada");
 </script>
 
 </body>
