@@ -32,3 +32,32 @@ Página web que calcula el promedio de tres notas e indica si el estudiante apru
 12. `console.log("promedio calculado")` — log de depuración que no debería estar en producción
 13. `console.log("pagina cargada")` — log de depuración que no debería estar en producción
 14. Función comentada `// function calcularAntiguo(...)` — código muerto comentado, lo mejor sería eliminarlo
+
+### Indentación y formato
+15. El bloque `<script>` no tenía indentación consistente con el resto del HTML
+16. Líneas en blanco sobrantes dentro de la función y al inicio y final del `<script>`
+
+---
+
+## Correcciones realizadas
+
+### refactor: Renombrar variables y función
+- `data1`, `TempValue2`, `x` → eliminadas/renombradas a `promedio` y `cantidadNotas`
+- `a`, `b`, `c` → `nota1`, `nota2`, `nota3`
+- `calc()` → `calcularPromedio()`
+
+### style: Formato e indentación
+- Corregida indentación del bloque `<script>` para que sea consistente con el HTML
+- Eliminadas líneas en blanco sobrantes
+
+### chore: Renombrar archivos y eliminar código muerto
+- `Mi Pagina De Notas.HTML` → `index.html`
+- `Estilos Del Sitio.CSS` → `styles.css`
+- Eliminada función comentada `calcularAntiguo`
+- Eliminados todos los `console.log` de depuración
+
+### refactor: Renombrar identificadores HTML
+- `id="r"` → `id="resultado-promedio"`
+- `id="r2"` → `id="resultado-estado"`
+- `class="cont1"` → `class="contenedor"`
+- `<title>pagina</title>` → `<title>Calculadora de Promedio</title>`
