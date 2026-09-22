@@ -33,8 +33,6 @@
         let nota2 = parseFloat(document.getElementById("n2").value);
         let nota3 = parseFloat(document.getElementById("n3").value);
 
-        console.log("valores capturados:", nota1, nota2, nota3);
-
         if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
             document.getElementById("r").innerHTML = "Debe ingresar las tres notas.";
             return;
@@ -50,7 +48,6 @@
             document.getElementById("r2").innerHTML = "Resultado: reprobado";
         }
 
-        console.log("promedio calculado");
     }
 
 </script>
