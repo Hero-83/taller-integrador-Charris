@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>pagina</title>
+    <title>Calculadora de Promedio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cont1">
+    <div class="contenedor">
         <h1>Calculadora de Promedio</h1>
         <p>Ingrese las tres notas del corte para calcular el promedio.</p>
 
@@ -21,8 +21,8 @@
 
         <button onclick="calcularPromedio()">Calcular</button>
 
-        <p id="r"></p>
-        <p id="r2"></p>
+        <p id="resultado-promedio"></p>
+        <p id="resultado-estado"></p>
     </div>
 
 <script>
@@ -34,18 +34,18 @@
         let nota3 = parseFloat(document.getElementById("n3").value);
 
         if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
-            document.getElementById("r").innerHTML = "Debe ingresar las tres notas.";
+            document.getElementById("resultado-promedio").innerHTML = "Debe ingresar las tres notas.";
             return;
         }
 
         let promedio = (nota1 + nota2 + nota3) / cantidadNotas;
 
-        document.getElementById("r").innerHTML = "Promedio: " + promedio.toFixed(2);
+        document.getElementById("resultado-promedio").innerHTML = "Promedio: " + promedio.toFixed(2);
 
         if (promedio >= 3.0) {
-            document.getElementById("r2").innerHTML = "Resultado: aprobado";
+            document.getElementById("resultado-estado").innerHTML = "Resultado: aprobado";
         } else {
-            document.getElementById("r2").innerHTML = "Resultado: reprobado";
+            document.getElementById("resultado-estado").innerHTML = "Resultado: reprobado";
         }
 
     }
