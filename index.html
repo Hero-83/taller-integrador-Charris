@@ -24,33 +24,29 @@
         <p id="resultado-promedio"></p>
         <p id="resultado-estado"></p>
     </div>
+    <script>
+        const cantidadNotas = 3;
 
-<script>
-    const cantidadNotas = 3;
+        function calcularPromedio() {
+            let nota1 = parseFloat(document.getElementById("n1").value);
+            let nota2 = parseFloat(document.getElementById("n2").value);
+            let nota3 = parseFloat(document.getElementById("n3").value);
 
-    function calcularPromedio() {
-        let nota1 = parseFloat(document.getElementById("n1").value);
-        let nota2 = parseFloat(document.getElementById("n2").value);
-        let nota3 = parseFloat(document.getElementById("n3").value);
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                document.getElementById("resultado-promedio").innerHTML = "Debe ingresar las tres notas.";
+                return;
+            }
 
-        if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
-            document.getElementById("resultado-promedio").innerHTML = "Debe ingresar las tres notas.";
-            return;
+            let promedio = (nota1 + nota2 + nota3) / cantidadNotas;
+
+            document.getElementById("resultado-promedio").innerHTML = "Promedio: " + promedio.toFixed(2);
+
+            if (promedio >= 3.0) {
+                document.getElementById("resultado-estado").innerHTML = "Resultado: aprobado";
+            } else {
+                document.getElementById("resultado-estado").innerHTML = "Resultado: reprobado";
+            }
         }
-
-        let promedio = (nota1 + nota2 + nota3) / cantidadNotas;
-
-        document.getElementById("resultado-promedio").innerHTML = "Promedio: " + promedio.toFixed(2);
-
-        if (promedio >= 3.0) {
-            document.getElementById("resultado-estado").innerHTML = "Resultado: aprobado";
-        } else {
-            document.getElementById("resultado-estado").innerHTML = "Resultado: reprobado";
-        }
-
-    }
-
-</script>
-
+    </script>
 </body>
 </html>
