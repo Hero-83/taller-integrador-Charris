@@ -1,38 +1,25 @@
-# Calculadora de Promedio — Auditoría y Corrección
+# TALLER INTEGRADOR
+**Eissan Libardo Charris Meriño**
 
-## Descripción
-Página web que calcula el promedio de tres notas e indica si el estudiante aprueba o reprueba.
+## Sitio publicado
+https://taller-integrador-charris.netlify.app/
 
 ---
 
-## Auditoría de defectos encontrados
+## Tabla de hallazgos de la auditoría
 
-### Nombres de archivos
-1. `Mi Pagina De Notas.HTML` — espacios en el nombre y extensión en mayúsculas. Deberia ser `index.html`
-2. `Estilos Del Sitio.CSS` — espacios en el nombre y extensión en mayúsculas. Deberia ser `styles.css`
-
-### Variables en JavaScript
-3. `data1` — arreglo nunca usado y sin nombre descriptivo (código muerto). Lo ideal sería eliminarlo.
-4. `TempValue2` — nombre no descriptivo. Una mejor opción sería `promedio`
-5. `x` — nombre sin significado semántico, representa la cantidad de notas. Estaría mejor usar el literal `3` directamente
-
-### Nombre de función
-6. `calc()` — nombre demasiado abreviado y sin significado claro. Sería mucho mejor `calcularPromedio()`
-
-### Identificadores HTML
-7. `id="r"` — nombre sin significado. Una opción más clara sería `id="resultado-promedio"`
-8. `id="r2"` — nombre sin significado. Una opción más clara sería `id="resultado-estado"`
-9. `class="cont1"` — nombre sin significado semántico. Estaría mejor como `class="contenedor"`
-
-### Título de la pestaña
-10. `<title>pagina</title>` — título genérico y en minúscula. Lo ideal sería algo como `<title>Calculadora de Promedio</title>`
-
-### Código muerto e innecesario
-11. `console.log("valores capturados:", a, b, c)` — log de depuración que no debería estar en producción
-12. `console.log("promedio calculado")` — log de depuración que no debería estar en producción
-13. `console.log("pagina cargada")` — log de depuración que no debería estar en producción
-14. Función comentada `// function calcularAntiguo(...)` — código muerto comentado, lo mejor sería eliminarlo
-
-### Indentación y formato
-15. El bloque `<script>` no tiene indentación consistente con el resto del HTML
-16. Líneas en blanco sobrantes dentro de la función `calc()` y al inicio del `<script>`
+| Defecto encontrado | Por qué era un problema | Cómo lo corrigió |
+|---|---|---|
+| Variable llamada `x` | No indica qué almacena; obliga a leer todo el código para entenderlo | Se renombró a `cantidadNotas` |
+| Variable llamada `TempValue2` | Nombre no descriptivo y con formato inconsistente | Se renombró a `promedio` |
+| Variable llamada `data1` | Arreglo declarado pero nunca usado (código muerto) | Se eliminó |
+| Parámetros `a`, `b`, `c` | Nombres de una sola letra sin significado semántico | Se renombraron a `nota1`, `nota2`, `nota3` |
+| Función llamada `calc()` | Nombre demasiado abreviado, no describe lo que hace | Se renombró a `calcularPromedio()` |
+| `id="r"` e `id="r2"` | Identificadores sin significado, dificultan el mantenimiento | Se renombraron a `resultado-promedio` y `resultado-estado` |
+| `class="cont1"` | Nombre sin significado semántico | Se renombró a `contenedor` |
+| `<title>pagina</title>` | Título genérico y en minúscula, no describe la página | Se cambió a `Calculadora de Promedio` |
+| `Mi Pagina De Notas.HTML` | Espacios en el nombre y extensión en mayúsculas | Se renombró a `index.html` |
+| `Estilos Del Sitio.CSS` | Espacios en el nombre y extensión en mayúsculas | Se renombró a `styles.css` |
+| Función comentada `calcularAntiguo` | Código muerto que genera ruido y confusión | Se eliminó |
+| `console.log` de depuración | Logs que no deben estar en producción | Se eliminaron |
+| Indentación inconsistente en `<script>` | El bloque no seguía la indentación del resto del HTML | Se corrigió la indentación |
